@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Audio Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Simple Audio Blog</h1>
+    <input type="text" id="searchBar" placeholder="Search for tracks...">
+    <div id="albums"></div>
+    <div id="controlButtonsContainer">
+        <div id="currentTrackTitle">Tên bài hát hiện tại</div>
+        <button id="pauseTrack">Pause</button>
+        <button id="resumeTrack">Resume</button>
+        <button id="nextTrack">Next</button>
+    </div>
+    <div id="playlist" class="playlist">
+        <h2>Playlist</h2>
+        <div id="playlistTracks"></div>
+        <button id="clearPlaylist">Clear Playlist</button>
+        <button id="playAll">Play All</button>
+        <button id="shuffleAll">Shuffle All</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

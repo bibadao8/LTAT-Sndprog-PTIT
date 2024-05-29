@@ -1,0 +1,184 @@
+/* Đầu tệp CSS */
+/* CSS Variables */
+:root {
+    --primary-color: #2156a5;
+    --secondary-color: #b43636;
+    --text-color: #333;
+    --button-color: #4CAF50;
+    --button-hover-color: #45a049;
+    --button-download-color: #008CBA;
+    --button-download-hover-color: #007B9E;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --box-shadow-hover-color: rgba(0, 0, 0, 0.2);
+    --background-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-gradient);
+    background-size: 400% 400%;
+    color: var(--text-color);
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Animation for background gradient */
+@keyframes gradientAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Title styles */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar */
+#searchBar {
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+#searchBar:focus {
+    outline: none;
+    box-shadow: 0 4px 12px var(--box-shadow-hover-color);
+    transform: scale(1.05);
+}
+
+/* Album and Playlist styles */
+.album, .playlist {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.album:hover, .playlist:hover {
+    transform: translateY(-5px);
+}
+
+.album h2, .playlist h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: #555;
+}
+
+/* Track styles */
+.track {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.track p {
+    margin: 5px 0;
+    font-size: 1em;
+    flex: 1;
+}
+
+.track audio {
+    flex: 2;
+    margin-right: 10px;
+}
+
+/* Button styles */
+.track button, .track a.button, #clearPlaylist, #playAll, #shuffleAll, #pauseTrack, #resumeTrack, #nextTrack {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--button-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 5px;
+    text-decoration: none;
+    text-align: center;
+    z-index: 1000; /* Đảm bảo nút điều khiển phát nằm trên cùng */
+}
+
+.track button:hover, .track a.button:hover, #clearPlaylist:hover, #playAll:hover, #shuffleAll:hover, #pauseTrack:hover, #resumeTrack:hover, #nextTrack:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+}
+
+/* Download Button styles */
+.download-btn {
+    background-color: var(--button-download-color);
+}
+
+.download-btn:hover {
+    background-color: var(--button-download-hover-color);
+}
+
+/* Album Wrapper styles */
+.album-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.album-image {
+    width: 600px;
+}
+
+/* Current Track Title and Control Buttons */
+/* Container cho nút điều khiển */
+#controlButtonsContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Các nút điều khiển */
+#pauseTrack, #resumeTrack, #nextTrack {
+    margin-right: 10px;
+}
+
+/* Current Track Title */
+#currentTrackTitle {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+    margin-right: 10px;
+}
